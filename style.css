@@ -374,48 +374,56 @@ a {
 /*------------------------------ Sección de Experiencia profesional ---------------------------------*/
 .proyectos {
     position: relative;
-    width: 100vw; /* Asegura que ocupa todo el ancho visible */
-    max-width: 85rem; /* Limita el contenido a 1200px */
-    margin: 2rem auto; /* Centra el contenido */
-    padding: 0 1rem; /* Añade relleno en los lados */
-    box-sizing: border-box; /* Evita que el padding aumente el tamaño del contenedor */
-    overflow-x: hidden; /* Previene el scroll horizontal */
+    width: 100%;
+    max-width: 85rem;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    box-sizing: border-box;
 }
 
-.proyectos__titulo{
-    font-size: 2rem; /* Ajusta el tamaño de la fuente según tu diseño */
-    font-weight: bold; /* Opción para hacer el texto más grueso */
-    text-align: center; /* Centra el texto horizontalmente */
-    color: #000; /* Cambia este valor al color que prefieras */
-    margin: 3rem auto; /* Asegura que no haya márgenes extra a los lados */
+.proyectos__titulo {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    color: #000;
+    margin: 3rem auto;
 }
 
 .proyectos__contenedor {
-    flex-direction: column; /* Apila los elementos verticalmente */
-    display: flex; /* Apila los elementos horizontalmente */
-    align-items: center; /* Centra verticalmente los elementos dentro del contenedor */
-    gap: 1.5rem; /* Espacio entre la imagen y el texto */
-    padding: 1rem; /* Añade un poco de espacio dentro del contenedor */
-    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem; /* Espacio entre los bloques de contenido */
 }
 
 .proyectos__contenedor__objeto {
-    display: flex; /* Apila los elementos horizontalmente */
-    align-items: center; /* Centra verticalmente los elementos dentro del contenedor */
-    gap: 1.5rem; /* Espacio entre la imagen y el texto */
-    padding: 1rem; /* Añade un poco de espacio dentro del contenedor */
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Asegura que imagen y contenido estén a los extremos */
+    gap: 2rem; /* Espacio entre la imagen y el contenido */
     box-sizing: border-box;
+    width: 100%;
 }
 
 .proyectos__imagen {
-    width: 100px; /* Ajusta el tamaño de la imagen */
-    height: auto; /* Mantiene la proporción de la imagen */
+    flex: 1; /* Toma hasta el 50% del espacio */
+    max-width: 70%; /* Limita el ancho de la imagen al 50% */
+    width: 25rem; /* Ancho fijo para la imagen */
+    height: 30rem; /* Alto fijo para la imagen */
+    overflow: hidden; /* Asegura que el contenido no se desborde si la imagen es más grande */
+}
+
+.proyectos__imagen img {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 .proyectos__contenido {
+    flex: 1; /* Toma hasta el 50% del espacio */
     display: flex;
-    flex-direction: column; /* Apila el título y la descripción verticalmente */
-    justify-content: center; /* Centra verticalmente el contenido de texto */
+    flex-direction: column;
+    justify-content: center;
+    max-width: 30%; /* Limita el ancho del contenido al 50% */
 }
 
 .proyectos__nombre {
@@ -426,15 +434,78 @@ a {
 
 .proyectos__descripcion {
     font-size: 1rem;
-    margin: 0; /* Elimina los márgenes adicionales */
+    margin-bottom: 0.5rem;
 }
 
+.proyectos__boton {
+    display: flex; /* Utiliza flexbox para alinear los botones en línea */
+    justify-content: flex-start; /* Alinea los botones al inicio (izquierda) */
+    gap: 10px; /* Espacio entre los botones */
+}
+
+.proyectos__boton__repositorio,
+.proyectos__boton__demo {
+    padding: 10px 15px; /* Ajusta el padding para hacer los botones más pequeños */
+    font-size: 16px; /* Tamaño de fuente más pequeño */
+    border: none; /* Sin borde por defecto */
+    border-radius: 4px; /* Esquinas redondeadas */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    transition: background-color 0.3s; /* Transición suave para el color de fondo */
+}
+
+/* Estilos para el botón "Repositorio" */
+.proyectos__boton__repositorio {
+    background-color: transparent; /* Color de fondo del botón "Repositorio" */
+    color: #007bff; /* Color del texto */
+    border: 2px solid #007bff; /* Borde de 2px de grosor y color azul */
+    border-radius: 4px; /* Esquinas redondeadas */
+    padding: 5px 10px; /* Espaciado interno para hacer el botón más pequeño */
+    font-size: 14px; /* Tamaño de fuente más pequeño */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    transition: background-color 0.3s, color 0.3s; /* Transición suave para el color de fondo y el texto */
+}
+
+.proyectos__boton__repositorio:hover {
+    background-color: #007bff; /* Cambia el color de fondo al pasar el mouse */
+    color: #fff; /* Cambia el color del texto al pasar el mouse */
+}
+
+
+/* Estilos para el botón "Ver demo" */
+.proyectos__boton__demo {
+    background-color: #007bff; /* Color de fondo del botón "Ver demo" */
+    border: 2px solid #007bff; /* Borde de 2px de grosor y color azul */
+    color: #fff; /* Color del texto */
+}
+
+.proyectos__boton__demo:hover {
+    background-color: #218838; /* Cambia el color al pasar el mouse */
+    border: 2px solid #218838; /* Borde de 2px de grosor y color azul */
+}
+
+/* Invertir el orden de imagen y contenido */
+.invertido {
+    flex-direction: row-reverse; /* Cambia el orden de los elementos */
+}
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 768px) {
+    .proyectos__contenedor__objeto {
+        flex-direction: column; /* Apila imagen y contenido verticalmente en pantallas pequeñas */
+    }
+    .invertido {
+        flex-direction: column; /* Mantiene la disposición apilada en móviles */
+    }
+    .proyectos__imagen, .proyectos__contenido {
+        max-width: 100%; /* La imagen y el contenido ocupan todo el ancho en pantallas pequeñas */
+    }
+}
 
 
 /*------------------------------ Sección de Contacto ---------------------------------*/
 .contacto {
     padding: 2rem;
-    background-color: #f9f9f9; /* Cambia el color de fondo según tu diseño */
+    background-color: var(--color-de-fondo-azul);
     display: flex;
     justify-content: center; /* Centra horizontalmente todo el contenido de la sección */
     align-items: center; /* Centra verticalmente el contenido dentro de la sección */
@@ -472,15 +543,15 @@ a {
     margin-bottom: 1rem;
 }
 
-.habilidades__nombre {
-    font-size: 1.2rem;
-    margin-bottom: 1.5rem;
+.contacto__descripcion {
+    font-size: 1rem;
 }
 
 .contacto__formulario {
     display: flex;
     flex-direction: column;
     width: 100%;
+    /*margin-bottom: 2rem;*/
 }
 
 .contacto__campo {
@@ -508,6 +579,26 @@ a {
 
 .contacto__boton:hover {
     background-color: #0056b3;
+}
+
+/* ------------------------------ Sección de Información ---------------------------------------*/
+.informacion {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    flex-direction: column; /* Coloca el contenido uno debajo del otro */
+    text-align: center;
+}
+
+.informacion__nombre {
+    font-size: 1.2em; /* Tamaño de fuente más grande para el nombre */
+    font-weight: bold; /* Texto en negrita */
+    margin: 10px 0; /* Espaciado alrededor del nombre */
+}
+
+.informacion__fecha {
+    font-size: 1em; /* Tamaño de fuente adecuado para la fecha */
+    color: #555; /* Color gris suave para el texto de la fecha */
 }
 
 /* ------------------------------ Responsividad ---------------------------------------*/

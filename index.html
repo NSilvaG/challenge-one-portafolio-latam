@@ -210,22 +210,33 @@
     <section class="proyectos" id="proyectos">
         <h2 class="proyectos__titulo">Experiencia Profesional</h2>
         <div class="proyectos__contenedor">
+            <!-- Primer bloque: Imagen izquierda, descripción derecha -->
             <div class="proyectos__contenedor__objeto">
                 <div class="proyectos__imagen">
-                    <img src="assets/contact_image.png">
+                    <img src="assets/contact_image.png" alt="Imagen del proyecto">
                 </div>
                 <div class="proyectos__contenido">
-                    <h3 class="proyectos__nombre">Título de la Experiencia</h3>
-                    <p class="proyectos__descripcion">Lorem ipsum dolor sit amet consectetur</p>
+                    <h3 class="proyectos__nombre">Encriptador de texto</h3>
+                    <p class="proyectos__descripcion">Challenge Alura Codificador</p>
+                    <div class="proyectos__boton">
+                        <button class="proyectos__boton__repositorio" type="submit">Repositorio</button>
+                        <button class="proyectos__boton__demo" type="submit">Ver demo</button>
+                    </div>
                 </div>
             </div>
-            <div class="proyectos__contenedor__objeto">
+
+            <!-- Segundo bloque: Descripción izquierda, imagen derecha -->
+            <div class="proyectos__contenedor__objeto invertido">
+                <div class="proyectos__imagen">
+                    <img src="assets/contact_image.png" alt="Imagen del proyecto">
+                </div>
                 <div class="proyectos__contenido">
                     <h3 class="proyectos__nombre">Título de la Experiencia</h3>
                     <p class="proyectos__descripcion">Lorem ipsum dolor sit amet consectetur</p>
-                </div>
-                <div class="proyectos__imagen">
-                    <img src="assets/contact_image.png">
+                    <div class="proyectos__boton">
+                        <button class="proyectos__boton__repositorio" type="submit">Repositorio</button>
+                        <button class="proyectos__boton__demo" type="submit">Ver demo</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -239,7 +250,8 @@
             </div>
             <div class="contacto__informacion">
                 <h2 class="contacto__titulo">Contacto</h2>
-                <p class="habilidades__nombre">CSS</p>
+                <p class="contacto__descripcion">¿Quieres contactarme?</p>
+                <p class="contacto__descripcion">Por favor diligencie el siguiente formulario y me comunicaré lo antes posible</p>
                 <form class="contacto__formulario">
                     <input class="contacto__campo" type="text" placeholder="Nombre">
                     <input class="contacto__campo" type="email" placeholder="Correo Electrónico">
@@ -250,5 +262,17 @@
         </div>
     </section>
 </body>
+
+<footer aria-label="Información del desarrollador">
+    <section class="informacion" id="informacion">
+        <div class="informacion__contenido">
+            <h3 class="informacion__nombre">Desarrollado por Nelly de Jesús Silva Galindo</h3>
+            <p class="informacion__fecha">
+                <time datetime="2024">2024</time>
+            </p>
+        </div>
+    </section>
+</footer>
+
     <script src="script.js"></script>
 </html>
